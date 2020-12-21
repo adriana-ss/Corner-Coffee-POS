@@ -9,10 +9,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
 import model.Coffee;
 import model.Food;
+import model.Mocha;
 import model.Order;
 import model.Sale;
 import model.Soy;
 import model.SteamedMilk;
+import model.WhippedMilk;
 import util.DBHelper;
 
 public class OrderMenuController {
@@ -24,9 +26,15 @@ public class OrderMenuController {
 	@FXML
 	Button decaf;
 	@FXML
+	Button espresso;
+	@FXML
 	CheckBox steamedMilk;
 	@FXML
 	CheckBox soy;
+	@FXML
+	CheckBox mocha;
+	@FXML
+	CheckBox whippedMilk;
 	@FXML
 	ListView<String> orderView;
 	@FXML
@@ -115,6 +123,12 @@ public class OrderMenuController {
 		}
 		if(soy.isSelected()) {
 			coffee = Soy.addSoy((Coffee)coffee);
+		}
+		if(mocha.isSelected()) {
+			coffee = Mocha.addMocha((Coffee)coffee);
+		}
+		if(soy.isSelected()) {
+			coffee = WhippedMilk.addWhippedMilk((Coffee)coffee);
 		}
 		
 		return (Coffee)coffee;

@@ -32,9 +32,9 @@
                               <ListView fx:id="orderView" prefHeight="333.0" prefWidth="199.0" />
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="54.0" prefWidth="198.0">
                            <children>
-                              <GridPane fx:id="costsView" prefHeight="63.0" prefWidth="198.0">
+                              <GridPane fx:id="costsView" prefHeight="62.0" prefWidth="198.0">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="82.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="64.0" />
@@ -153,6 +153,14 @@
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </HBox.margin>
                                           </Button>
+                                          <Button fx:id="espresso" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Espresso" textAlignment="CENTER" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Button>
                                        </children>
                                     </HBox>
                                     <Label text="Toppings:">
@@ -183,7 +191,7 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </padding>
                                           </CheckBox>
-                                          <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1">
+                                          <CheckBox fx:id="mocha" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Mocha" GridPane.columnIndex="1">
                                              <padding>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </padding>
@@ -193,7 +201,7 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </padding>
                                           </CheckBox>
-                                          <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <CheckBox fx:id="whippedMilk" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Whipped milk" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                              <padding>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </padding>
@@ -218,7 +226,10 @@
                 </Tab>
                   <Tab text="Sandwiches">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="hamBtn" layoutX="39.0" layoutY="38.0" mnemonicParsing="false" onAction="#addSandwich" prefHeight="66.0" prefWidth="99.0" text="Ham sandwich" textAlignment="CENTER" wrapText="true" />
+                           </children></AnchorPane>
                     </content>
                   </Tab>
               </tabs>
