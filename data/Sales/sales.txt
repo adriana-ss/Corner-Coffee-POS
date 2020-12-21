@@ -1,0 +1,11 @@
+Date: Mon Dec 21 00:56:57 EST 2020	Server ID: null
+
+Order: 
+Decaf, Mocha, Whipped Milk	4.0
+Ham Sandwich	5.0
+Ham Sandwich	5.0
+Decaf, Mocha, Whipped Milk	4.0
+
+Subtotal: 	$18.00
+Tax: 		$1.55
+Total: 		$19.55

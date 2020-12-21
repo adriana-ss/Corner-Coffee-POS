@@ -32,7 +32,6 @@ public class DBHelper {
 			ConnectionUtil.closeConnection(conn);
 		}
 
-
 		return 0;
 	}
 
@@ -42,12 +41,7 @@ public class DBHelper {
 
 		try {
 			Statement statement = conn.createStatement();
-			statement.setQueryTimeout(30);
-//			statement.executeUpdate("INSERT INTO sales (date, paymentMethod, subtotal, tax, total, employeeID)"
-//					+ "VALUES('" + sale.getDate() + "', '" + sale.getPaymentMethod() +
-//					"', '" + sale.getSubtotal() + "', '" + sale.getTax() + "', '" +
-//					sale.getTotal() + "', '" + sale.getEmployeeID() + "')" );
-			
+			statement.setQueryTimeout(30);			
 			statement.executeUpdate("INSERT INTO sales (date, subtotal, tax, total)"
 					+ "VALUES('" + sale.getDate() +
 					"', '" + sale.getSubtotal() + "', '" + sale.getTax() + "', '" +
@@ -58,14 +52,13 @@ public class DBHelper {
 		} finally {
 			ConnectionUtil.closeConnection(conn);
 		}
-
 	}
 	
 	public static void viewSaleRecords() {
 		Connection conn = null;
 		conn = ConnectionUtil.getConnection();
 		
-		System.out.println("Viewing sales table");
+		System.out.println("\nViewing sales table:");
 		
 		try {
 			Statement statement = conn.createStatement();
@@ -78,6 +71,13 @@ public class DBHelper {
 				System.out.println("Date: " + date);
 				String paymentMethod = rs.getString("paymentMethod");
 				System.out.println("Payment method: " + paymentMethod);
+				String subtotal = rs.getString("subtotal");
+				System.out.println("Subtotal: " + subtotal );
+				String tax = rs.getString("tax");
+				System.out.println("Tax: " + tax);
+				String total = rs.getString("total");
+				System.out.println("Total: " + total);
+				System.out.println();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -119,7 +119,4 @@ public class DBHelper {
 			ConnectionUtil.closeConnection(conn);
 		}
 	}
-
-
-
 }

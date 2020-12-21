@@ -1,5 +1,7 @@
 package model;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Date;
 
@@ -81,9 +83,16 @@ public class Sale {
 		System.out.println(getReceipt());
 	}
 
-
-
-
-
+	public static void writeToSalesFile(Sale sale) {
+		try {
+		      FileWriter myWriter = new FileWriter("data/Sales/sales.txt");
+		      myWriter.write(sale.getReceipt() + "\n");
+		      myWriter.close();
+		      System.out.println("Saved sale to sales.txt");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+	}
 
 }

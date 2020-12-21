@@ -56,13 +56,19 @@ public class OrderMenuController {
 	public void placeOrder() {
 		System.out.println("***ORDER PLACED***");
 		Sale sale = new Sale(orderInProgress);
-		DBHelper.saveSale(sale);
-		sale.printRecepipt();
+		saveSale(sale);
 		reprintBtn.setDisable(false);
 	}
 	
+	private void saveSale(Sale sale) {
+		DBHelper.saveSale(sale);
+		Sale.writeToSalesFile(sale);
+		sale.printRecepipt();
+	}
+
 	@FXML
 	public void reprintReceipt() {
+		System.out.println("***REPRINT***");
 		Sale sale = new Sale(orderInProgress);
 		sale.printRecepipt();
 	}
@@ -95,6 +101,8 @@ public class OrderMenuController {
 	private void resetSelections() {
 		steamedMilk.setSelected(false);
 		soy.setSelected(false);
+		mocha.setSelected(false);
+		whippedMilk.setSelected(false);
 		toppingsMenu.setDisable(true);
 		
 	}
@@ -136,7 +144,7 @@ public class OrderMenuController {
 		if(mocha.isSelected()) {
 			coffee = Mocha.addMocha((Coffee)coffee);
 		}
-		if(soy.isSelected()) {
+		if(whippedMilk.isSelected()) {
 			coffee = WhippedMilk.addWhippedMilk((Coffee)coffee);
 		}
 		
@@ -145,6 +153,13 @@ public class OrderMenuController {
 	
 	@FXML
 	public void voidOrder() {
-		
+		startNewOrder();
 	}
+	
+	@FXML
+	public void printSales() {
+		DBHelper.viewSaleRecords();
+	}
+	
+	
 }
