@@ -19,17 +19,17 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="houseBlendBtn" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="House Blend" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="houseBlendBtn" mnemonicParsing="false" onAction="#addHouseBlend" prefHeight="80.0" prefWidth="100.0" text="House Blend" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="darkRoastBtn" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Dark Roast" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="darkRoastBtn" mnemonicParsing="false" onAction="#addDarkRoast" prefHeight="80.0" prefWidth="100.0" text="Dark Roast" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="decafBtn" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="Decaf" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="decafBtn" mnemonicParsing="false" onAction="#addDecaf" prefHeight="80.0" prefWidth="100.0" text="Decaf" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </HBox.margin>
@@ -44,7 +44,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <GridPane>
+            <GridPane fx:id="toppingsMenu">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -59,7 +59,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" />
                </VBox.margin>
                <children>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Steamed milk" wrapText="true">
+                  <CheckBox fx:id="steamedMilk" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Steamed milk" wrapText="true">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -69,7 +69,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Soy" GridPane.rowIndex="1">
+                  <CheckBox fx:id="soy" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Soy" GridPane.rowIndex="1">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -81,7 +81,7 @@
                   </CheckBox>
                </children>
             </GridPane>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Button" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="44.0" prefWidth="104.0" text="Add to order" textAlignment="CENTER">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
