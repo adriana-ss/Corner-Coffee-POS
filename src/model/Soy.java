@@ -8,7 +8,6 @@ public class Soy extends ToppingDecorator {
 	
 	public Soy(Coffee newCoffee) {
 		super(newCoffee);
-		System.out.println("Adding Soy. ");
 	}
 	
 	public String getDescription() {
@@ -21,7 +20,7 @@ public class Soy extends ToppingDecorator {
 
 	@Override
 	public String toString() {
-		return "Soy [name=" + name + "]";
+		return name;
 	}
 	
 	public static Coffee addSoy(Coffee coffee) {

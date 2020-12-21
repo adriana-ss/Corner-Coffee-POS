@@ -22,7 +22,7 @@ public class DarkRoast implements Coffee {
 
 	@Override
 	public String toString() {
-		return "DarkRoast [name=" + name + "]";
+		return name;
 	}
 	
 	

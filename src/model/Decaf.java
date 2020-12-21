@@ -22,7 +22,7 @@ public class Decaf implements Coffee {
 
 	@Override
 	public String toString() {
-		return "Decaf [name=" + name + "]";
+		return name;
 	}
 	
 	

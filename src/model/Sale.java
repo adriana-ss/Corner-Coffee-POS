@@ -1,5 +1,6 @@
 package model;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Sale {
@@ -11,6 +12,8 @@ public class Sale {
 	PaymentMethod paymentMethod;
 	String employeeID;
 	
+	DecimalFormat df = new DecimalFormat("#0.00");
+
 	public Sale(Order order, PaymentMethod paymentMethod, String employeeID) {
 		super();
 		this.order = order;
@@ -20,6 +23,15 @@ public class Sale {
 		this.total = order.getTotal();
 		this.paymentMethod = paymentMethod;
 		this.employeeID = employeeID;
+	}
+
+	public Sale(Order order) {
+		super();
+		this.order = order;
+		this.date = new Date();
+		this.subtotal = order.getSubtotal();
+		this.tax = order.getTax();
+		this.total = order.getTotal();
 	}
 
 	public Order getOrder() {
@@ -55,23 +67,23 @@ public class Sale {
 		return "Sale [order=" + order + ", date=" + date + ", subtotal=" + subtotal + ", tax=" + tax + ", total="
 				+ total + ", paymentMethod=" + paymentMethod + ", employeeID=" + employeeID + "]";
 	}
-	
+
 	public String getReceipt() {
 		return "Date: " + date +
 				"\tServer ID: " + employeeID +
-				"\nOrder: " + order.getReceipt() +
-				"\nSubtotal: \t" + subtotal +
-				"\nTax: \t" + tax +
-				"\nTotal: \t" + total;
+				"\n\nOrder: \n" + order.getReceipt() +
+				"\nSubtotal: \t$" + df.format(subtotal) +
+				"\nTax: \t\t$" + df.format(tax) +
+				"\nTotal: \t\t$" + df.format(total);
 	}
-	
+
 	public void printRecepipt() {
 		System.out.println(getReceipt());
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 }

@@ -8,7 +8,6 @@ public class SteamedMilk extends ToppingDecorator {
 	
 	public SteamedMilk(Coffee newCoffee) {
 		super(newCoffee);
-		System.out.println("Adding steamed milk. ");
 	}
 	
 	public String getDescription() {
@@ -21,7 +20,7 @@ public class SteamedMilk extends ToppingDecorator {
 
 	@Override
 	public String toString() {
-		return "SteamedMilk [name=" + name + "]";
+		return name;
 	}
 	
 	public static Coffee addSteamedMilk(Coffee coffee) {

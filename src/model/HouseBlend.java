@@ -22,7 +22,7 @@ public class HouseBlend implements Coffee {
 
 	@Override
 	public String toString() {
-		return "HouseBlend [name=" + name + "]";
+		return name;
 	}
 
 }

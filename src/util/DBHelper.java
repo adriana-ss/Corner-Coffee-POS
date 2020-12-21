@@ -43,12 +43,15 @@ public class DBHelper {
 		try {
 			Statement statement = conn.createStatement();
 			statement.setQueryTimeout(30);
-			statement.executeUpdate("INSERT INTO sales (date, paymentMethod, subtotal, tax, total, employeeID)"
-					+ "VALUES('" + sale.getDate() + "', '" + sale.getPaymentMethod() +
-					"', '" + sale.getSubtotal() + "', '" + sale.getTax() + "', '" +
-					sale.getTotal() + "', '" + sale.getEmployeeID() + "')" );
+//			statement.executeUpdate("INSERT INTO sales (date, paymentMethod, subtotal, tax, total, employeeID)"
+//					+ "VALUES('" + sale.getDate() + "', '" + sale.getPaymentMethod() +
+//					"', '" + sale.getSubtotal() + "', '" + sale.getTax() + "', '" +
+//					sale.getTotal() + "', '" + sale.getEmployeeID() + "')" );
 			
-			System.out.println("Inserting sale: " + sale);
+			statement.executeUpdate("INSERT INTO sales (date, subtotal, tax, total)"
+					+ "VALUES('" + sale.getDate() +
+					"', '" + sale.getSubtotal() + "', '" + sale.getTax() + "', '" +
+					sale.getTotal() + "')" );
 
 		} catch (SQLException e) {
 			e.printStackTrace();
