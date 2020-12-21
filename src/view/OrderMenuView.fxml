@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.OrderMenuController">
    <children>
       <BorderPane prefHeight="500.0" prefWidth="700.0">
          <left>
@@ -27,12 +27,12 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="198.0">
                            <children>
-                              <ListView prefHeight="333.0" prefWidth="199.0" />
+                              <ListView fx:id="orderView" prefHeight="333.0" prefWidth="199.0" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <GridPane prefHeight="63.0" prefWidth="198.0">
+                              <GridPane fx:id="costsView" prefHeight="63.0" prefWidth="198.0">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="82.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="64.0" />
@@ -85,8 +85,8 @@
                   </SplitPane>
                   <ButtonBar prefHeight="27.0" prefWidth="155.0">
                     <buttons>
-                      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Order" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" text="Re-print" />
+                      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#placeOrder" text="Order" />
+                        <Button fx:id="reprintBtn" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#reprintReceipt" text="Re-print" />
                     </buttons>
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
@@ -101,22 +101,22 @@
          <right>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Button">
+                  <Button mnemonicParsing="false" onAction="#voidOrder" prefHeight="50.0" prefWidth="70.0" text="Void order" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Button">
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Void line" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Button">
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Duplicate Item" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Button">
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" text="Edit menu" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
@@ -129,7 +129,7 @@
               <tabs>
                 <Tab text="Coffee">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="330.0" />
+                    <AnchorPane fx:id="coffeeMenuPane" minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="330.0" />
                   </content>
                 </Tab>
                 <Tab text="Other drinks">
