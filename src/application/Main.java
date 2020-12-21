@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import util.DBHelper;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
@@ -21,7 +22,12 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		DBHelper.insertRow("sandwiches", "Ham Sandwich", 5.00);
+		DBHelper.insertRow("coffees", "Espresso", 3.00);
+		DBHelper.insertRow("coffeeToppings", "Mocha", 1.00);
+		DBHelper.insertRow("coffeeToppings", "Whipped Milk", 0.50);
 		launch(args);
+
 		
 	}
 }

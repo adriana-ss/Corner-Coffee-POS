@@ -9,6 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
 import model.Coffee;
 import model.Food;
+import model.HamSandwich;
 import model.Mocha;
 import model.Order;
 import model.Sale;
@@ -81,7 +82,10 @@ public class OrderMenuController {
 			return;
 		}
 		
-		foodInProgress = addToppings(foodInProgress);
+		if(foodInProgress instanceof Coffee) {
+			foodInProgress = addToppings((Coffee)foodInProgress);
+		}
+		
 		orderInProgress.add(foodInProgress);
 		updateDisplay();
 		resetSelections();
@@ -106,6 +110,11 @@ public class OrderMenuController {
 		taxLbl.setText(orderInProgress.getTax() + "");
 		totalLbl.setText(orderInProgress.getTotal() + "");
 	}
+	
+	@FXML
+	public void addSandwich() {
+		foodInProgress = new HamSandwich();
+	}
 
 	@FXML
 	public void startCoffee(Event event) {
@@ -117,7 +126,7 @@ public class OrderMenuController {
 		}
 	}
 	
-	public Coffee addToppings(Food coffee) {
+	public Coffee addToppings(Coffee coffee) {
 		if(steamedMilk.isSelected()) {
 			coffee = SteamedMilk.addSteamedMilk((Coffee)coffee);
 		}

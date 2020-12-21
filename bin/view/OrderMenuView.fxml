@@ -127,114 +127,6 @@
                </children>
             </VBox>
          </right>
-         <center>
-            <TabPane prefHeight="460.0" prefWidth="396.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Coffee">
-                     <content>
-                        <AnchorPane prefHeight="420.0" prefWidth="330.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="429.0" prefWidth="391.0">
-                                 <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0">
-                                       <children>
-                                          <Button fx:id="houseBlend" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="House Blend" textAlignment="CENTER" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                          <Button fx:id="darkRoast" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Dark Roast" textAlignment="CENTER" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                          <Button fx:id="decaf" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Decaf" textAlignment="CENTER" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                          <Button fx:id="espresso" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Espresso" textAlignment="CENTER" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font size="12.0" />
-                                             </font>
-                                          </Button>
-                                       </children>
-                                    </HBox>
-                                    <Label text="Toppings:">
-                                       <VBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </VBox.margin>
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <GridPane fx:id="toppingsMenu" disable="true">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <CheckBox fx:id="steamedMilk" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Steamed milk" wrapText="true">
-                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                             </padding>
-                                          </CheckBox>
-                                          <CheckBox fx:id="mocha" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Mocha" GridPane.columnIndex="1">
-                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                             </padding>
-                                          </CheckBox>
-                                          <CheckBox fx:id="soy" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Soy" GridPane.rowIndex="1">
-                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                             </padding>
-                                          </CheckBox>
-                                          <CheckBox fx:id="whippedMilk" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Whipped milk" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                             </padding>
-                                          </CheckBox>
-                                       </children>
-                                    </GridPane>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addItem" prefHeight="44.0" prefWidth="104.0" text="Add to order" textAlignment="CENTER">
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                </Tab>
-                <Tab text="Other drinks">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-                  <Tab text="Sandwiches">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="hamBtn" layoutX="39.0" layoutY="38.0" mnemonicParsing="false" onAction="#addSandwich" prefHeight="66.0" prefWidth="99.0" text="Ham sandwich" textAlignment="CENTER" wrapText="true" />
-                           </children></AnchorPane>
-                    </content>
-                  </Tab>
-              </tabs>
-            </TabPane>
-         </center>
          <top>
             <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
@@ -243,6 +135,119 @@
               </items>
             </ToolBar>
          </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane prefHeight="460.0" prefWidth="396.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Coffee">
+                           <content>
+                              <AnchorPane prefHeight="420.0" prefWidth="330.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="429.0" prefWidth="391.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="houseBlend" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="House Blend" textAlignment="CENTER" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="darkRoast" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Dark Roast" textAlignment="CENTER" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="decaf" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Decaf" textAlignment="CENTER" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="espresso" mnemonicParsing="false" onAction="#startCoffee" prefHeight="80.0" prefWidth="100.0" text="Espresso" textAlignment="CENTER" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Label text="Toppings:">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <GridPane fx:id="toppingsMenu" disable="true">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <CheckBox fx:id="steamedMilk" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Steamed milk" wrapText="true">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="mocha" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Mocha" GridPane.columnIndex="1">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="soy" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Soy" GridPane.rowIndex="1">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="whippedMilk" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Whipped milk" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                      </Tab>
+                      <Tab text="Other drinks">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                        <Tab text="Sandwiches">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="hamBtn" layoutX="39.0" layoutY="38.0" mnemonicParsing="false" onAction="#addSandwich" prefHeight="66.0" prefWidth="99.0" text="Ham sandwich" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addItem" prefHeight="44.0" prefWidth="104.0" text="Add to order" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

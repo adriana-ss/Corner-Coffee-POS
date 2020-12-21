@@ -103,7 +103,7 @@ public class DBHelper {
 
 	}
 	
-	public static double addRowToCoffee(String name, Double price) {
+	public static void insertRow(String table, String name, Double price) {
 		Connection conn = null;
 		conn = ConnectionUtil.getConnection();
 
@@ -111,34 +111,13 @@ public class DBHelper {
 			Statement statement = conn.createStatement();
 			statement.setQueryTimeout(30);
 
-			statement.executeUpdate("INSERT INTO coffees (name, price)" +
-					"VALUES('" + name + "', '" + price + ")");
+			statement.executeUpdate("INSERT INTO " + table + "(name, price)" +
+					"VALUES('" + name + "', '" + price + "')");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			ConnectionUtil.closeConnection(conn);
 		}
-
-		return 0;
-	}
-	
-	public static double addRowToCoffeeToppings(String name, Double price) {
-		Connection conn = null;
-		conn = ConnectionUtil.getConnection();
-
-		try {
-			Statement statement = conn.createStatement();
-			statement.setQueryTimeout(30);
-
-			statement.executeUpdate("INSERT INTO coffeeToppings (name, price)" +
-					"VALUES('" + name + "', '" + price + ")");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			ConnectionUtil.closeConnection(conn);
-		}
-
-		return 0;
 	}
 
 
